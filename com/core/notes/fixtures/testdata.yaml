@@ -1,0 +1,44 @@
+- model: auth.user
+  pk: 1
+  fields:
+    username: TestAdmin
+    password: None
+    is_staff: True
+- model: auth.user
+  pk: 2
+  fields:
+    username: TestUser
+    password: None
+    is_staff: False
+- model: notes.userprofile
+  pk: 1
+  fields:
+    user: 1
+    birthdate: 1989-12-01
+    favourite_animal: dog
+- model: notes.userprofile
+  pk: 2
+  fields:
+    user: 2
+    birthdate: 2000-05-05
+    favourite_animal: cat
+- model: notes.note
+  pk: 1
+  fields:
+    subject: whiskey diet
+    content: He went on a whiskey diet and immediately lost three days.
+    content_type: message
+    created: 2021-12-26 16:12:00+00:00
+    edited: null
+    status: draft
+    author: 1
+- model: notes.note
+  pk: 2
+  fields:
+    subject: tortoise
+    content: The tortoise jumped into the lake with dreams of becoming a sea turtle.
+    content_type: message
+    created: 2021-12-26 16:22:00+00:00
+    edited: 2021-12-26 16:22:00+00:00
+    status: published
+    author: 1

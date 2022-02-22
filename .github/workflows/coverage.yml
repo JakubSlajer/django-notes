@@ -20,29 +20,14 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.8, 3.9]
-        db: [sqlite, postgres, mysql]
+        python-version: [3.9]
+        db: [mysql]
         include:
-          - db: postgres
-            db_port: 5432
           - db: mysql
             db_port: 3306
-        # Service containers to run with `container-job`
 
     services:
       # postgres db
-      postgres:
-        image: postgres:10
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: hunter2
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 5432:5432
       mysql:
         image: mysql:5.7
         env:

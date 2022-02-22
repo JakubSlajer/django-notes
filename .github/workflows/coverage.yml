@@ -1,0 +1,44 @@
+name: CI/CD
+on:
+  push:
+    branches:
+      - 'dev'
+      - 'stage'
+      - 'master'
+      - 'feature/**'
+      - 'refactoring/**'
+      - 'bugfix/**'
+      - 'chore/**'
+    pull_request:
+      - 'dev'
+      - 'master'
+      - 'stage'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      OS: ubuntu-latest
+      PYTHON: '3.9'
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: ‘2’
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run:
+        pip install coverage
+    - name: Generate Report
+      run: |
+        cp tcgworld_backend/.env.ci tcgworld_backend/.env
+        cd tcgworld_backend
+        coverage run manage.py test
+    - name: Upload Coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        path_to_write_report: ./coverage/codecov_report.txt

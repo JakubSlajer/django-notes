@@ -31,7 +31,7 @@ jobs:
           MYSQL_DATABASE: django-notes
           MYSQL_USER: root
           MYSQL_PASSWORD: r00t
-          MYSQL_ROOT_PASSWORD: r00t
+          MYSQL_ROOT_PASSWORD: r00tpqd
         ports:
           - 3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3

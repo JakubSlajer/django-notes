@@ -34,7 +34,7 @@ jobs:
           MYSQL_DATABASE: test_db
           MYSQL_USER: user
           MYSQL_PASSWORD: password
-          MYSQL_ROOT_PASSWORD: hunter2
+          MYSQL_ROOT_PASSWORD: r00t
         ports:
           - 3306:3306
         options: >-
@@ -61,15 +61,22 @@ jobs:
         DB: ${{ matrix.db }}
         DB_HOST: 127.0.0.1
         DB_PORT: ${{ matrix.db_port }}
-        DB_PASSWORD: hunter2
+        DB_PASSWORD: r00t
       run: |
         cd com
         python manage.py test
+  
     - name: Generate Report
+      env:
+        DB: ${{ matrix.db }}
+        DB_HOST: 127.0.0.1
+        DB_PORT: ${{ matrix.db_port }}
+        DB_PASSWORD: r00t
       run: |
         cp com/.env.ci com/.env
         cd com
         python manage.py test
+
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v1
       with:

@@ -67,12 +67,6 @@ jobs:
     - name: Install coverage
       run:
         pip install coverage
-
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-
     - name: Run Tests
       env:
         DB: ${{ matrix.db }}
@@ -82,11 +76,6 @@ jobs:
       run: |
         cd com
         python manage.py test
-
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
     - name: Generate Report
       run: |
         cd com

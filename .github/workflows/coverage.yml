@@ -37,10 +37,6 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: ‘2’
-    - name: Execute tests
-      run: vendor/bin/phpunit
-      env:
-        DB_PORT: ${{ job.services.mysql.ports[3306] }}
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2

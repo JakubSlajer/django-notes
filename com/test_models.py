@@ -36,6 +36,9 @@ class ModelsTestCase(TestCase):
         self.assertIn(Note.objects.get(subject="whiskey diet"), list(Note.objects.all()))
         self.assertIn(Note.objects.get(subject="tortoise"), list(Note.objects.all()))
 
+    def test_me(self):
+        None
+
     def tearDown(self):
         super().tearDown()
 

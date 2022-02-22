@@ -39,6 +39,9 @@ class ModelsTestCase(TestCase):
     def test_me(self):
         None
 
+    def test_me_another(self):
+        None
+
     def tearDown(self):
         super().tearDown()
 

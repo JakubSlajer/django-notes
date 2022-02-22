@@ -34,8 +34,7 @@ jobs:
         pip install coverage
     - name: Generate Report
       run: |
-        cp tcgworld_backend/.env.ci tcgworld_backend/.env
-        cd tcgworld_backend
+        cd com
         coverage run manage.py test
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v1

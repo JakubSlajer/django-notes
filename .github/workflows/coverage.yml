@@ -31,6 +31,9 @@ jobs:
       mysql:
         image: mysql:5.7
         env:
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: user
+          MYSQL_PASSWORD: password
           MYSQL_ROOT_PASSWORD: hunter2
         ports:
           - 3306:3306

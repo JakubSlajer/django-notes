@@ -72,6 +72,7 @@ jobs:
         DB_PORT: ${{ matrix.db_port }}
         DB_PASSWORD: hunter2
       run: |
+        cd com
         python manage.py test
 
     - name: Set up Python ${{ matrix.python-version }}

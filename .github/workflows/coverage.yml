@@ -15,6 +15,18 @@ on:
       - 'stage'
 
 jobs:
+  services:
+    # Label used to access the service container
+    mysql:
+      image: mysql:5.7
+      env:
+        MYSQL_DATABASE: test_db
+        MYSQL_USER: user
+        MYSQL_PASSWORD: password
+        MYSQL_ROOT_PASSWORD: rootpassword
+      ports:
+        - 33306:3306
+      options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
   run:
     runs-on: ubuntu-latest
     env:

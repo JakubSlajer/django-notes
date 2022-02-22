@@ -8,3 +8,4 @@ django-tenants==3.3.2
 Django==3.2.4
 djangorestframework-simplejwt==4.7.1
 djangorestframework==3.12.2
+mysqlclient==2.1.0

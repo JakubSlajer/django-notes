@@ -36,6 +36,9 @@ jobs:
     - name: Install coverage
       run:
         pip install coverage
+    - name: Instal mysqlclient
+      run:
+        pip install mysqlclient
     - name: Generate Report
       run: |
         cd com

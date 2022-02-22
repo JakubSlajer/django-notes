@@ -64,7 +64,7 @@ jobs:
         DB_PASSWORD: r00t
       run: |
         cd com
-        python manage.py test
+        coverage python manage.py test -v2&&coverage report
   
     - name: Generate Report
       env:

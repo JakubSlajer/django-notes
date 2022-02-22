@@ -33,13 +33,17 @@ jobs:
           MYSQL_PASSWORD: r00t
           MYSQL_ROOT_PASSWORD: r00t
         ports:
-          - 3306:3306
+          - 3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: ‘2’
+    - name: Execute tests
+      run: vendor/bin/phpunit
+      env:
+        DB_PORT: ${{ job.services.mysql.ports[3306] }}
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
@@ -52,13 +56,10 @@ jobs:
     - name: Install coverage
       run:
         pip install coverage
-    - name: Instal mysqlclient
-      run:
-        pip install mysqlclient
     - name: Generate Report
       run: |
         cd com
-        coverage run manage.py test
+        run manage.py test
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v1
       with:

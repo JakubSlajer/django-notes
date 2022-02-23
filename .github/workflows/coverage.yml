@@ -65,17 +65,6 @@ jobs:
       run: |
         cd com
         coverage run manage.py test -v2&&coverage report&&coverage xml
-  
-    - name: Generate Report
-      env:
-        DB: ${{ matrix.db }}
-        DB_HOST: 127.0.0.1
-        DB_PORT: ${{ matrix.db_port }}
-        DB_PASSWORD: r00t
-      run: |
-        cp com/.env.ci com/.env
-        cd com
-        python manage.py test
     
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v2.1.0

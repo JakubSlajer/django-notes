@@ -64,7 +64,7 @@ jobs:
         DB_PASSWORD: r00t
       run: |
         cd com
-        coverage run manage.py test -v2&&coverage report
+        coverage run manage.py test -v2&&coverage report&&coverage xml
   
     - name: Generate Report
       env:
@@ -81,3 +81,6 @@ jobs:
       uses: codecov/codecov-action@v2.1.0
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./coverage.xml,
+        flags: unittests
+        fail_ci_if_error: true

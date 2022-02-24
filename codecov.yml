@@ -8,6 +8,7 @@
 # ----------------------
 codecov:
   require_ci_pass: true
+  max_report_age: off
 
 coverage:
   status:
@@ -22,7 +23,7 @@ coverage:
 # --------------
 # which folders/files to ignore
 ignore:
-  - */LICENSE
-  - */README.md"
-  - */migrations/**/*
-  - */fixtures/.*
+  - "LICENSE"
+  - "README.md"
+  - "migrations/**/*"
+  - "fixtures/**/*"

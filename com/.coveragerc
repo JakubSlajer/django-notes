@@ -3,4 +3,5 @@ omit =
         *__init__*
         */usr/local/lib*
         */dist-packages/*
-source = com
+source = 
+        com

@@ -73,7 +73,7 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         directory: ./com/report/
-        files: ./com/report/coverage.xml
+        files: ./com/report/report.xml
         flags: unittests
         fail_ci_if_error: true
         verbose: true

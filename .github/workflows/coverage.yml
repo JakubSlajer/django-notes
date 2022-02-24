@@ -64,11 +64,12 @@ jobs:
         DB_PASSWORD: r00t
       run: |
         cd com
-        coverage run manage.py test&&coverage report&&coverage json
+        coverage run manage.py test
+        coverage report
+        coverage json
     
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v2.1.0
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./coverage.json,
-        flags: unittests

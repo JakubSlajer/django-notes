@@ -1,5 +1,3 @@
 ignore:
-  - "LICENSE"
-  - "README.md"
   - "/com/core/notes/migrations"
   - "/com/core/notes/fixtures"

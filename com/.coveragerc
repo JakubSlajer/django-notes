@@ -3,3 +3,5 @@ omit =
         *__init__*
         */usr/local/lib*
         *test_models*
+        */dist-packages/*
+source = com

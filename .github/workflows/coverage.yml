@@ -66,10 +66,12 @@ jobs:
         cd com
         coverage run manage.py test
         coverage report
-        coverage json
+        coverage xml
     
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v2.1.0
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        files: ./coverage.json,
+        files: ./coverage.xml,
+        flags: unittests
+        fail_ci_if_error: true

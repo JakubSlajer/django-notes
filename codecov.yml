@@ -22,13 +22,7 @@ coverage:
 # --------------
 # which folders/files to ignore
 ignore:
-  - */tests/.*
-  - */_version.py
-  - setup.py
-  - versioneer.py
-
-ignore:
-  - */LICENS
+  - */LICENSE
   - */README.md"
   - */migrations/**/*
   - */fixtures/.*

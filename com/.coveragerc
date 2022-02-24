@@ -5,3 +5,5 @@ omit =
         */dist-packages/*
 source = 
         com
+[xml]
+output = report/report.xml

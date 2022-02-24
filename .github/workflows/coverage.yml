@@ -72,8 +72,8 @@ jobs:
       uses: codecov/codecov-action@v2.1.0
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        directory: ./com/report
-        files: ./coverage.xml
+        directory: ./com/report/
+        files: ./com/report/coverage.xml
         flags: unittests
         fail_ci_if_error: true
         verbose: true

@@ -33,6 +33,7 @@ jobs:
     - name: Install node modules
       run: |
         npm i --save
+        npm install --save-dev hardhat
     - name: Run hardhat test
       run: |
         npx hardhat

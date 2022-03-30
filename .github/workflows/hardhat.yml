@@ -31,3 +31,4 @@ jobs:
     - name: Run hardhat
       run:
         cd hardhat
+        npx hardhat test

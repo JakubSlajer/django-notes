@@ -38,9 +38,3 @@ jobs:
       run: |
         cd hardhat
         npx hardhat test
-    - name: Run hardhat node 🚀
-      run: |
-        cd hardhat
-        npx hardhat node
-        sleep 30s
-        exit 1

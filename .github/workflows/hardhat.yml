@@ -1,4 +1,18 @@
-name: CI/CD
+name: Hadrhat Testnet
+on:
+  push:
+    branches:
+      - 'dev'
+      - 'stage'
+      - 'master'
+      - 'feature/**'
+      - 'refactoring/**'
+      - 'bugfix/**'
+      - 'chore/**'
+    pull_request:
+      - 'dev'
+      - 'master'
+      - 'stage'
 
 jobs:
   build:

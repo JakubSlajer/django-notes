@@ -35,7 +35,7 @@ jobs:
     #   npm i --save
     #    npm install --save-dev hardhat
     - name: Setup hardhat
-      uses: nomicfoundation/hardhat@v2.9.2
+      uses: nomicfoundation/hardhat@main
     - name: Run hardhat
       run: |
         cd hardhat

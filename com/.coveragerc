@@ -4,6 +4,6 @@ omit =
         */usr/local/lib*
         */dist-packages/*
 source = 
-        com
+        soikemra
 [xml]
 output = report/report.xml

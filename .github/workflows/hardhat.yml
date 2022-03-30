@@ -36,4 +36,4 @@ jobs:
     - name: Run hardhat test
       run: |
         cd hardhat
-        npx hardhat
+        npx hardhat compile

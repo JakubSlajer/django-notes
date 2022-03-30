@@ -16,7 +16,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
       matrix:
@@ -27,7 +27,7 @@ jobs:
       with:
         fetch-depth: ‘2’
     - name: Setup node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: '14'
     #- name: Install node modules
@@ -35,7 +35,7 @@ jobs:
     #   npm i --save
     #    npm install --save-dev hardhat
     - name: Setup hardhat
-      uses: NomicFoundation/hardhat@latest
+      uses: NomicFoundation/hardhat@v2.9.2
     - name: Run hardhat
       run: |
         cd hardhat

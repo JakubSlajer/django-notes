@@ -34,7 +34,11 @@ jobs:
       run: |
         cd hardhat
         npm i --save
-    - name: Run hardhat
+    - name: Test smart contracts
       run: |
         cd hardhat
         npx hardhat test
+    - name: Run hardhat node
+      run: |
+        cd hardhat
+        npx hardhat node

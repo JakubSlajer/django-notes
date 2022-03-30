@@ -38,8 +38,8 @@
         "Greeter"
       ]
     },
-    "F:\\PyCharmProjects\\django-notes\\node_modules\\hardhat\\console.sol": {
-      "lastModificationDate": 1648658522949,
+    "F:\\PyCharmProjects\\django-notes\\hardhat\\node_modules\\hardhat\\console.sol": {
+      "lastModificationDate": 1648664870283,
       "contentHash": "cc4777addd464ea56fa35b1c45df0591",
       "sourceName": "hardhat/console.sol",
       "solcConfig": {

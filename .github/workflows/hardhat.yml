@@ -30,12 +30,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '14'
-    #- name: Install node modules
-    #  run: |
-    #   npm i --save
-    #    npm install --save-dev hardhat
-    - name: Setup hardhat
-      uses: nomicfoundation/hardhat
+    - name: Install node modules
+      run: |
+        npm i --save
     - name: Run hardhat
       run: |
         cd hardhat

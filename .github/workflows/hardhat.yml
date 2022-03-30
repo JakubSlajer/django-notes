@@ -36,4 +36,4 @@ jobs:
     #    npm install --save-dev hardhat
     - name: Install hardhat
       run: |
-        npm install hardhat
+        npx hardhat

@@ -35,5 +35,4 @@ jobs:
         npm i --save
     - name: Run hardhat
       run: |
-        cd hardhat
         npx hardhat test

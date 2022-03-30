@@ -22,11 +22,10 @@ jobs:
       matrix:
         python-version: [3.9]
     steps:
-    - uses: actions/checkout@v2
     - name: Set up Python
+    - uses: actions/checkout@v2
       with:
         fetch-depth: ‘2’
     - uses: actions/setup-node@v2
-    - name: Set up Node
       with:
         node-version: '14'

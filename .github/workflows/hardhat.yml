@@ -42,3 +42,4 @@ jobs:
       run: |
         cd hardhat
         npx hardhat node
+        exit 1

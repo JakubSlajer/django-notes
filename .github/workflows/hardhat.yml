@@ -21,17 +21,23 @@ jobs:
       max-parallel: 4
       matrix:
         python-version: [3.9]
+
     steps:
     - uses: actions/checkout@v2
+    - name: Set up Python
       with:
-        fetch-depth: '2'
+        fetch-depth: ‘2’
+
     - uses: actions/setup-node@v2
+    - name: Set up Node
       with:
         node-version: '14'
+
     - name: Echo something
       run:
         echo "There's a thing in my code!"
+
     - name: Run hardhat
       run:
         cd hardhat
-        npx hardhat test
+        npm test

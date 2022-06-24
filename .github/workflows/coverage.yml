@@ -23,11 +23,10 @@ jobs:
         python-version: [3.9]
         db: [mysql]
         include:
-          - db: mysql
+          - db: test_db
             db_port: 3306
 
     services:
-      # postgres db
       mysql:
         image: mysql:5.7
         env:
@@ -61,6 +60,7 @@ jobs:
         DB: ${{ matrix.db }}
         DB_HOST: 127.0.0.1
         DB_PORT: ${{ matrix.db_port }}
+        DB_USER: user
         DB_PASSWORD: r00t
       run: |
         echo "${{ matrix.db }}"

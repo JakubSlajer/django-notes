@@ -52,13 +52,7 @@ jobs:
         pip install coverage
 
     - name: Run Tests
-      env:
-        DB: test
-        DB_HOST: 127.0.0.1
-        DB_PORT: 3306
-        DB_PASSWORD: r00t
       run: |
-        echo "${{ matrix.db }}"
         cd com
         coverage run manage.py test
         coverage report

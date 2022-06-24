@@ -21,9 +21,6 @@ jobs:
       max-parallel: 4
       matrix:
         python-version: [3.9]
-        db: [mysql]
-        include:
-          - db: test_db
 
     services:
       mysql:

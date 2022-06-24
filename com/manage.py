@@ -5,6 +5,12 @@ import sys
 
 
 def main():
+    if 'test' in sys.argv:
+        print("using test settings")
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.utils.settings.test')
+    else:
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
+    
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
     try:

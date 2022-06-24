@@ -58,4 +58,4 @@ jobs:
         DB_PASSWORD: r00t
       run: |
         cd com
-        py manage.py test
+        python manage.py test

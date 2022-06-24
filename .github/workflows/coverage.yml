@@ -24,15 +24,12 @@ jobs:
         db: [mysql]
         include:
           - db: mysql
-            db_port: 3306
 
     services:
       mysql:
         image: mysql:5.7
         env:
-          MYSQL_DATABASE: test_db
-          MYSQL_USER: user
-          MYSQL_PASSWORD: password
+          MYSQL_DATABASE: ${{ matrix.db }}
           MYSQL_ROOT_PASSWORD: r00t
         ports:
           - 3306:3306

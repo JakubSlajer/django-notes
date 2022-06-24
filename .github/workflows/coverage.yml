@@ -56,9 +56,10 @@ jobs:
 
     - name: Run Tests
       env:
-        DB_NAME: root
+        DB_NAME: mysql
         DB_HOST: 127.0.0.1
         DB_PORT: 3306
+        DB_USER: user
         DB_PASSWORD: r00t
       run: |
         cd com

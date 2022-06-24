@@ -53,7 +53,7 @@ jobs:
 
     - name: Run Tests
       env:
-        DB: ${{ matrix.db }}
+        DB_NAME: ${{ matrix.db }}
         DB_HOST: 127.0.0.1
         DB_PORT: ${{ matrix.db_port }}
         DB_PASSWORD: r00t

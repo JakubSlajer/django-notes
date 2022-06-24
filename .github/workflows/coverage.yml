@@ -63,6 +63,7 @@ jobs:
         DB_PORT: ${{ matrix.db_port }}
         DB_PASSWORD: r00t
       run: |
+        echo &{{ matrix.db }}
         cd com
         coverage run manage.py test
         coverage report

@@ -30,6 +30,7 @@ jobs:
         image: mysql:5.7
         env:
           MYSQL_DATABASE: mysql
+          MYSQL_ROOT_HOST: localhost
           MYSQL_ROOT_PASSWORD: r00t
         ports:
           - 3306:3306

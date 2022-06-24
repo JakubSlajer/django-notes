@@ -58,5 +58,5 @@ jobs:
         DB_PASSWORD: r00t
       run: |
         cd com
-        echo "${{ secret.MY_PWD }}"
+        echo "${{ secrets.MY_PWD }}"
         python manage.py test

@@ -29,7 +29,10 @@ jobs:
       mysql:
         image: mysql:5.7
         env:
+          MYSQL_ROOT_NAME: mysql
+          MYSQL_ROOT_USER: root
           MYSQL_ROOT_PASSWORD: r00t
+          MYSQL_ROOT_HOST: 127.0.0.1
         ports:
           - 3306:3306
         options: >-
@@ -53,9 +56,9 @@ jobs:
 
     - name: Run Tests
       env:
-        DB_NAME: ${{ matrix.db }}
+        DB_NAME: root
         DB_HOST: 127.0.0.1
-        DB_PORT: ${{ matrix.db_port }}
+        DB_PORT: 3306
         DB_PASSWORD: r00t
       run: |
         cd com

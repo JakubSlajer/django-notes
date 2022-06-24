@@ -23,13 +23,15 @@ jobs:
         python-version: [3.9]
         db: [mysql]
         include:
-          - db: mysql
+          - db: test_db
 
     services:
       mysql:
         image: mysql:5.7
         env:
-          MYSQL_DATABASE: ${{ matrix.db }}
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: root
+          MYSQL_PASSWORD: r00t
           MYSQL_ROOT_PASSWORD: r00t
         ports:
           - 3306:3306
@@ -54,9 +56,10 @@ jobs:
 
     - name: Run Tests
       env:
-        DB_NAME: ${{ matrix.db }}
+        DB_NAME: test_db
         DB_HOST: 127.0.0.1
-        DB_PORT: ${{ matrix.db_port }}
+        DB_PORT: 3306
+        DB_USER: root
         DB_PASSWORD: r00t
       run: |
         cd com

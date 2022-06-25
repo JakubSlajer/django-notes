@@ -5,7 +5,6 @@ from .base import *
 
 # ================= TEST SETTINGS ====================
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-print("base dir test", BASE_DIR)
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 # ============== LOAD CUSTOM ENV FILE ================
@@ -16,8 +15,12 @@ if os.path.isfile(dotenv_file):
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'test_database',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 

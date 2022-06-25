@@ -1,4 +1,4 @@
-name: MAIN
+name: POSTGRES
 on:
   push:
     branches:

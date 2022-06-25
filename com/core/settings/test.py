@@ -15,15 +15,15 @@ if os.path.isfile(dotenv_file):
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'test_database',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
     }
 }
 
 
-SECRET_TEST_EMAIL = os.getenv("SECRET_TEST_EMAIL")
-SECRET_TEST_PWD = os.environ.get("SECRET_TEST_PWD")
+"""
+
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',"""

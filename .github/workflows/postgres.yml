@@ -24,18 +24,23 @@ jobs:
         python-version: [3.9]
 
     services:
-      mysql:
-        image: mysql:5.7
+      # Label used to access the service container
+      db:
+        # Docker Hub image
+        image: postgres
+        # Provide the password for postgres
         env:
-          MYSQL_DATABASE: test_db
-          MYSQL_ROOT_PASSWORD: r00t
+          POSTGRES_DB: postgres
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          # Set health checks to wait until postgres has started
+          options: >-
+            --health-cmd pg_isready
+            --health-interval 10s
+            --health-timeout 5s
+            --health-retries 5
         ports:
-          - 3306:3306
-        options: >-
-          --health-cmd="mysqladmin ping"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=3
+          - 5432:5432
 
     steps:
     - uses: actions/checkout@v2
@@ -52,11 +57,11 @@ jobs:
 
     - name: Run Tests
       env:
-        DB_NAME: test_db
+        DB_NAME: postgres
         DB_HOST: 127.0.0.1
-        DB_PORT: 3306
-        DB_USER: root
-        DB_PASSWORD: r00t
+        DB_PORT: 5432
+        DB_USER: postgres
+        DB_PASSWORD: postgres
       run: |
         cd com
         python manage.py test

@@ -14,7 +14,9 @@ import dotenv
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+print("base settigns base dir" , BASE_DIR)
 
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
@@ -156,3 +158,6 @@ REST_FRAMEWORK = {
 # config/settings.py
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+SECRET_TEST_EMAIL = os.environ.get("SECRET_TEST_EMAIL")
+SECRET_TEST_PWD = os.environ.get("SECRET_TEST_PWD")

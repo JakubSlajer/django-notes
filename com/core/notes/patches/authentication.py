@@ -1,6 +1,5 @@
 # authentication
 from rest_framework import authentication
-from core.notes import views
 
 class BearerAuthentication(authentication.TokenAuthentication):
     """

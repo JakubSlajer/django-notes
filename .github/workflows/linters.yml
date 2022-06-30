@@ -1,0 +1,56 @@
+name: LINTER
+on:
+  push:
+    branches:
+      - 'dev'
+      - 'stage'
+      - 'master'
+      - 'feature/**'
+      - 'refactoring/**'
+      - 'bugfix/**'
+      - 'chore/**'
+  pull_request:
+    branches:
+      - 'dev'
+      - 'master'
+      - 'stage'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.9]
+
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: test_db
+          MYSQL_ROOT_PASSWORD: r00t
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: 'Super-Linter' 
+      uses: github/super-linter@v4
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        VALIDATE_ALL_CODEBASE: false
+        JAVASCRIPT_DEFAULT_STYLE: 'prettier'
+        VALIDATE_PYTHON_FLAKE8: false
+        VALIDATE_PYTHON_PYLINT: false
+        VALIDATE_GITHUB_ACTIONS: false
+        VALIDATE_PYTHON_MYPY: false
+        # TODO: set paths for configurations files for black and isort
+        # PYTHON_BLACK_CONFIG_FILE: $"GITHUB_REPO"/tcgworld_backend/setup.cfg

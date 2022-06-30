@@ -1,6 +1,5 @@
 # authentication
 from rest_framework import authentication
-from .authentication import authentication
 
 class BearerAuthentication(authentication.TokenAuthentication):
     """

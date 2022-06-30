@@ -1,16 +1,18 @@
-from django.contrib.auth.models import User, Group
+from django.conf import settings
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import Group, User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic.edit import FormView
-from django.conf import settings
-from django.db.models.signals import post_save
-from django.dispatch import receiver
+from rest_framework import permissions, viewsets
 from rest_framework.authtoken.models import Token
+
 from .models import Note, UserProfile
 from .patches.permissions import IsAdminOrObjectOwner
-from rest_framework import viewsets, permissions
-from .serializers import ProfileSerializer, GroupSerializer, NoteSerializer, UserSerializer
+from .serializers import (GroupSerializer, NoteSerializer, ProfileSerializer,
+                          UserSerializer)
 
 
 class IndexView(generic.CreateView):

@@ -42,7 +42,7 @@ jobs:
         VALIDATE_PYTHON_PYLINT: false
         VALIDATE_GITHUB_ACTIONS: false
         VALIDATE_PYTHON_MYPY: false
-        FILTER_REGEX_EXCLUDE: (\.*migrations/.*| \
+        FILTER_REGEX_EXCLUDE: (\.*migrations/.*|
           \.*patches/.*)
         # TODO: set paths for configurations files for black and isort
         # PYTHON_BLACK_CONFIG_FILE: $"GITHUB_REPO"/tcgworld_backend/setup.cfg

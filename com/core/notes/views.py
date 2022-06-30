@@ -11,8 +11,12 @@ from rest_framework.authtoken.models import Token
 
 from .models import Note, UserProfile
 from .patches.permissions import IsAdminOrObjectOwner
-from .serializers import (GroupSerializer, NoteSerializer, ProfileSerializer,
-                          UserSerializer)
+from .serializers import (
+    GroupSerializer,
+    NoteSerializer,
+    ProfileSerializer,
+    UserSerializer,
+)
 
 
 class IndexView(generic.CreateView):
